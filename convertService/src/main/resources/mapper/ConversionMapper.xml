@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oristartech.mapper.ConversionMapper">
+<select id="checkByConvertCode" parameterType="String" resultType="Conversion">
+     select * from conversion where convert_code=#{convertCode}
+</select>
+
+<update id="updateStatusByDate" >
+   update conversion set status=2,use_date=#{1}
+    where convert_code=#{0}
+</update>
+
+<update id="updateStatus" >
+   update conversion set status=#{1}
+    where convert_code=#{0}
+</update>
+</mapper>
